@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Website Audit | Upfront Solutions</title>
+  <meta name="description" content="Request a free website audit and get a customized plan to improve your visibility on Google and AI tools. Useful advice you can act on, whether you hire us or not.">
+  <link rel="icon" href="https://cdn.prod.website-files.com/65ef8e5d98ceea40872999fa/66c4f976a3eae9d45327159d_Icon%20Only%20copy.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="index.html"><img class="logo" src="https://cdn.prod.website-files.com/65ef8e5d98ceea40872999fa/665e4ff89b907810824c2d86_Logo%20Horizontal%20copy.png" alt="Upfront Solutions"></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services &amp; Pricing</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="free-audit.html">Free Audit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero" style="padding:70px 24px 56px">
+  <h1>Get your free website audit.</h1>
+  <p class="sub">We'll review your website and send you a customized plan to improve your visibility on Google and AI tools. It's yours to keep and act on, whether you hire us or not.</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="cards" style="margin-bottom:64px">
+      <div class="card">
+        <span class="icon">&#128270;</span>
+        <h3>1. We Review</h3>
+        <p>We look at your website the way Google and AI tools see it: speed, structure, content, and local presence.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128221;</span>
+        <h3>2. You Get a Plan</h3>
+        <p>A clear, customized list of your biggest opportunities and what to do first, written in plain English.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128640;</span>
+        <h3>3. You Decide</h3>
+        <p>Implement it yourself, hand it to your team, or have us do it for you. No pressure either way.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Request your audit</h2>
+    <div class="form-wrap">
+      <form action="https://formspree.io/f/mojgbrwq" method="POST" data-inline>
+        <input type="hidden" name="form-type" value="Free Audit Request">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+        <label for="website">Your Website</label>
+        <input type="text" id="website" name="website" placeholder="yourwebsite.com (or leave blank if you don't have one yet)">
+        <label for="business">What does your business do?</label>
+        <input type="text" id="business" name="business">
+        <label for="goal">What's your biggest goal right now?</label>
+        <select id="goal" name="goal">
+          <option>More customers from Google search</option>
+          <option>Show up in my local area / maps</option>
+          <option>Get recommended by AI tools like ChatGPT</option>
+          <option>More repeat business and referrals</option>
+          <option>Not sure, tell me what you see</option>
+        </select>
+        <button type="submit" data-label="Request My Free Audit">Request My Free Audit</button>
+      </form>
+      <div class="form-msg form-success"><span class="big">&#10003;</span>Thank you! Your audit request is in. Watch your inbox, we'll follow up with your customized plan.</div>
+      <div class="form-msg form-error">Oops, something went wrong. Please try again, or email us directly.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Our Services</h4>
+        <a href="services.html">Website &amp; Technical SEO</a>
+        <a href="services.html#local">Local SEO</a>
+        <a href="services.html#email">Email &amp; Referral Marketing</a>
+      </div>
+      <div>
+        <h4>Need Help?</h4>
+        <a href="free-audit.html">Free Website Audit</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <a href="index.html#contact">Contact Us</a>
+        <a href="https://instagram.com/upfront_solutions" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="terms.html">Terms &amp; Privacy Policy</a>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Upfront Solutions. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('form[data-inline]').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var wrap = form.parentElement;
+    var ok = wrap.querySelector('.form-success');
+    var err = wrap.querySelector('.form-error');
+    err.classList.remove('show');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (r.ok) {
+        form.style.display = 'none';
+        ok.classList.add('show');
+      } else { throw new Error(); }
+    }).catch(function () {
+      err.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = btn.getAttribute('data-label') || 'Submit';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
