@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/free-audit", "destination": "/free-audit.html" }
+  ]
+}
