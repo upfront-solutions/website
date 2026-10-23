@@ -19,7 +19,14 @@
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">&#9776;</button>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/services">Services &amp; Pricing</a></li>
+      <li class="has-sub">
+        <a href="/services">Services &amp; Pricing</a>
+        <ul class="sub-menu">
+          <li><a href="/services">All Services &amp; Pricing</a></li>
+          <li><a href="/regenerative-medicine">Regenerative Medicine</a></li>
+          <li><a href="/weight-loss-clinics">Weight Loss Clinics</a></li>
+        </ul>
+      </li>
       <li><a href="/case-studies">Case Studies</a></li>
       <li><a href="/#contact">Contact</a></li>
       <li><a class="nav-cta" href="/free-audit">Free Audit</a></li>
@@ -242,6 +249,8 @@
         <a href="/services">Website &amp; Technical SEO</a>
         <a href="/services#local">Local SEO</a>
         <a href="/services#email">Email &amp; Referral Marketing</a>
+        <a href="/regenerative-medicine">Regenerative Medicine</a>
+        <a href="/weight-loss-clinics">Weight Loss Clinics</a>
       </div>
       <div>
         <h4>Need Help?</h4>
